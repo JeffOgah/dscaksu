@@ -32,7 +32,7 @@ const imagesGulp = function() {
           ]
       })
     ]))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('src/images'));
 };
 
 const gulpCss = function() {
@@ -40,7 +40,7 @@ const gulpCss = function() {
     .pipe(sourcemaps.init())
     .pipe(css())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('src/css'));
 };
 
 const jsGulp = function() {
@@ -50,7 +50,7 @@ const jsGulp = function() {
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('src/js'));
 };
 
 const copyManifest = function() {
@@ -67,7 +67,7 @@ const swGulp = function() {
 const vendorGulp = function() {
   return gulp.src(paths.vendor)
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/js/vendors'))
+    .pipe(gulp.dest('./src/js/vendors'))
 };
 
 const htmlGulp = function() {
